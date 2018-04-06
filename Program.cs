@@ -32,36 +32,68 @@ namespace TestConsoleApp1
             Console.WriteLine("Original text :" + ori_text);
             Console.WriteLine("Swiched text :" + swiched_text);
 
-            string ori_num_patn = "[1,2,3,4,5]";
-            ori_num_patn = ori_num_patn.Replace("[", "").Replace("]", "");
+            string ori = "[1,2,3,4,5]";
+            string ori_num_patn = ori.Replace("[", "").Replace("]", "");
             List<string> numbers = ori_num_patn.Split(',').ToList();
+            //numbers.Add("]");
             string[] to_compair = { "2", "3" };
             string[] to_add = { "6", "7", "8", "9", "10" };
 
-            Console.WriteLine("Original number pattern" + ori_num_patn);
+            Console.WriteLine("Original number pattern" + ori);
             foreach (string compair in to_compair) {
                 if (numbers.Contains(compair)) {
                     numbers.Remove(compair);
                 }
             }
             numbers.AddRange(to_add);
-            Console.Write("[");
+            string inner_text="";
             foreach (var sxs in numbers) {
-                    Console.Write(sxs);
-                    Console.Write(",");
+                  inner_text  = inner_text + "," + sxs;
             }
-            Console.WriteLine("]");
+            int index = inner_text.IndexOf(",");
+            if (index>=0)
+            {
+                inner_text = inner_text.Remove(index,1);
+            }
+            Console.Write("[");
+            Console.Write(inner_text);
+            Console.Write("]");
+
 
             //Addition 
             Console.WriteLine("Enter numbers to add followed by enter");
+
             while (true)
             {
                 if (double.TryParse(Console.ReadLine(), out numone))
                 {
+                    string operater = Console.ReadLine();
+                    switch (operater)
+                    {
+                        case "+":
+                           numtwo = double.TryParse(Console.ReadLine(),out numtwo);
+                            break;
+                        case "-":
+
+                        case "/":
+
+                        case "*":
+
+                        default:
+                            Console.WriteLine("Operator error");
+                            break;
+                    }
                     numtwo = numtwo + numone;
                 }
                 Console.WriteLine("Sum is " + numtwo);
             }
+
+            double convert_string_numbers(string num_str)
+            {
+                if (double.TryParse(Console.ReadLine(), out int_number))
+                {
+                    return int_numbers;
+                }
         }
     }
 }
