@@ -13,7 +13,8 @@ namespace TestConsoleApp1
             //Addition 
             double numone , numtwo = 0;
             double int_number = 0;
-            Console.WriteLine("Enter numbers to add followed by enter");
+            Console.WriteLine("You can use operators + , - , / , *  Ex:- 2+5-2*2/5");
+            Console.WriteLine("Enter numbers to calculate followed by enter");
             string number_build="";
             double short_sum = 0;
             while (true)
