@@ -11,7 +11,7 @@ namespace TestConsoleApp1
     {
         static void Main(string[] args)
         {
-            ////Exercise 1
+            ////Exercise 01
             //console_write("Exercise 1", true);
             //double numone, numtwo = 0;
             //string fname = "Chaminda", lname = "Amunugama";
